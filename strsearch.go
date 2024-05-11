@@ -63,15 +63,15 @@ func FindString(text, pattern string) (int, int) {
 	return -1, -1
 }
 
-func FinadAllString(text, pattern string) [][2]int {
-	out := [][2]int{}
+func FinadAllIndexString(text, pattern string) [][]int {
+	out := [][]int{}
 	cursor := 0
 	for {
 		idxBegin, idxEnd := FindString(text, pattern)
 		if idxBegin == -1 {
 			break
 		}
-		out = append(out, [2]int{idxBegin + cursor, idxEnd + cursor})
+		out = append(out, []int{idxBegin + cursor, idxEnd + cursor})
 		cursor += idxEnd
 		text = text[idxEnd:]
 	}
@@ -144,15 +144,15 @@ func Find(text, pattern []byte) (int, int) {
 	return -1, -1
 }
 
-func FindAll(text, pattern []byte) [][2]int {
-	out := [][2]int{}
+func FindAllIndex(text, pattern []byte) [][]int {
+	out := [][]int{}
 	cursor := 0
 	for {
 		idxBegin, idxEnd := Find(text, pattern)
 		if idxBegin == -1 {
 			break
 		}
-		out = append(out, [2]int{idxBegin + cursor, idxEnd + cursor})
+		out = append(out, []int{idxBegin + cursor, idxEnd + cursor})
 		cursor += idxEnd
 		text = text[idxEnd:]
 	}

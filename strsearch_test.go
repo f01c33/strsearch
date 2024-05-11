@@ -45,6 +45,9 @@ func TestFindAll(t *testing.T) {
 			t.Errorf("Expected %s got %s", pattern, text[idx[0]:idx[1]])
 		}
 	}
+	if FinadAllIndexString(text, "squibiridum") != nil {
+		t.Error("expected nil")
+	}
 }
 
 func TestFindBytes(t *testing.T) {
@@ -88,4 +91,8 @@ func TestFindAllBytes(t *testing.T) {
 			t.Errorf("Expected %s got %s", pattern, text[idx[0]:idx[1]])
 		}
 	}
+	if FindAllIndex([]byte(text), []byte("squibiridum")) != nil {
+		t.Error("expected nil")
+	}
+
 }

@@ -64,7 +64,7 @@ func FindString(text, pattern string) (int, int) {
 }
 
 func FinadAllIndexString(text, pattern string) [][]int {
-	out := [][]int{}
+	var out [][]int
 	cursor := 0
 	for {
 		idxBegin, idxEnd := FindString(text, pattern)
@@ -145,7 +145,7 @@ func Find(text, pattern []byte) (int, int) {
 }
 
 func FindAllIndex(text, pattern []byte) [][]int {
-	out := [][]int{}
+	var out [][]int
 	cursor := 0
 	for {
 		idxBegin, idxEnd := Find(text, pattern)
